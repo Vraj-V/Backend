@@ -1,0 +1,143 @@
+🌐 Beginner’s Guide to Node.js Server
+🔹 1. What is a Server in Node.js?
+Ans:
+            A server is a program that listens for requests (from browser or API client) and sends responses back.
+
+            Node.js uses the built-in http module to create servers.
+
+🔹 2. Create Your First Server
+Ans: 
+            Create server.js:
+        Code: 
+                const http = require("http");
+
+                // Create a server
+                const server = http.createServer((req, res) => {
+                res.writeHead(200, { "Content-Type": "text/plain" });
+                res.end("Hello, Node.js Server!");
+                });
+
+                // Listen on port 3000
+                server.listen(3000, () => {
+                console.log("Server running at http://localhost:3000");
+                });
+
+
+            Run it:
+        Terminal
+            node server.js
+
+
+            👉 Open browser → http://localhost:3000 → You’ll see:
+
+            Hello, Node.js Server!
+
+
+🔹 3. Routing Basics
+Ans
+        You can check req.url to send different responses:
+
+        const http = require("http");
+
+        const server = http.createServer((req, res) => {
+        res.writeHead(200, { "Content-Type": "text/plain" });
+
+        if (req.url === "/") {
+            res.end("Welcome to Home Page");
+        } else if (req.url === "/about") {
+            res.end("This is About Page");
+        } else {
+            res.end("404 Page Not Found");
+        }
+        });
+
+        server.listen(3000, () => {
+        console.log("Server running at http://localhost:3000");
+        });
+
+🔹 4. Serving JSON (API Example)
+        const http = require("http");
+
+        const server = http.createServer((req, res) => {
+        if (req.url === "/api") {
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ message: "Hello from API", status: "success" }));
+        } else {
+            res.writeHead(200, { "Content-Type": "text/plain" });
+            res.end("Hello, World!");
+        }
+        });
+
+        server.listen(3000, () => {
+        console.log("API server running at http://localhost:3000");
+        });
+
+🔹 5. Using Express.js (Easier Way)
+Ans:
+
+    Instead of handling everything manually, use Express (a Node.js framework):
+
+    Install:
+
+        npm install express
+
+
+    Code (app.js):
+
+        const express = require("express");
+        const app = express();
+
+        // Routes
+        app.get("/", (req, res) => res.send("Welcome to Home Page"));
+        app.get("/about", (req, res) => res.send("This is About Page"));
+        app.get("/api", (req, res) => res.json({ message: "Hello API" }));
+
+        // Start server
+        app.listen(3000, () => console.log("Express server running on http://localhost:3000"));
+
+
+👉 Much simpler for real apps
+
+Level 2: 
+🌐 Beginner’s Guide to Express.js
+🔹 1. What is Express.js?
+
+        Express.js is a fast, minimal, flexible web framework for Node.js.
+
+        Makes it easier to build servers & APIs (instead of writing raw http code).
+
+        Provides built-in features for routing, middleware, request/response handling.
+
+🔹 2. Install Express.js
+
+        Make a new project:
+
+        mkdir express-app
+        cd express-app
+        npm init -y          # create package.json
+        npm install express  # install express
+
+🔹 3. Create Your First Express Server
+
+            File: app.js
+
+            const express = require("express");
+            const app = express();
+
+            // Route
+            app.get("/", (req, res) => {
+            res.send("Hello from Express.js!");
+            });
+
+            // Start server
+            app.listen(3000, () => {
+            console.log("Server running at http://localhost:3000");
+            });
+
+
+            Run:
+
+            node app.js
+
+
+            👉 Open: http://localhost:3000

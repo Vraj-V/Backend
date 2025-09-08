@@ -1,0 +1,97 @@
+
+🌐 Beginner’s Guide to Node.js
+🔹 What is Node.js?
+
+        Node.js = JavaScript runtime to run JS outside the browser (on your computer/server).
+
+        Built on Google’s V8 engine.
+
+Lets you build servers, APIs, real-time apps using JavaScript.
+
+🔹 Why Use Node.js?
+
+        Single language → JavaScript (frontend + backend).
+
+        Fast (non-blocking, event-driven).
+
+        Works on all platforms (Windows, Mac, Linux).
+
+        Huge package ecosystem (npm).
+
+🔹 Check If Node.js is Installed
+        node -v
+        npm -v
+
+
+        👉 If installed → shows version (e.g., v20cls
+
+🔹 Install Node.js
+            Windows / Mac / Linux
+
+            Download from https://nodejs.org
+            (LTS recommended).
+
+            OR use package managers:
+
+            Windows (winget):
+
+            winget install OpenJS.NodeJS
+
+
+            Mac (brew):
+
+            brew install node
+
+
+            Linux (Ubuntu):
+
+            sudo apt update
+            sudo apt install nodejs npm -y
+
+🔹 First Node.js Program
+
+            Create app.js:
+
+            console.log("Hello, Node.js!");
+
+
+            Run:
+
+            node app.js
+
+🔹 Simple HTTP Server
+            const http = require("http");
+
+            const server = http.createServer((req, res) => {
+            res.end("Welcome to Node.js!");
+            });
+
+            server.listen(3000, () => {
+            console.log("Server running at http://localhost:3000");
+            });
+
+
+            Run:
+
+            node server.js
+
+🔹 npm (Node Package Manager)
+
+            Comes with Node.js.
+
+            Install packages (libraries).
+
+            Example:
+
+            npm init -y          # create project
+            npm install express  # install Express.js
+
+🔹 Node.js Uses
+
+            Backend APIs (Express.js, Nest.js).
+
+            Real-time apps (chat, live updates).
+
+            Streaming (Netflix, YouTube).
+
+            CLI tools (npm, ESLint, Prettier).
