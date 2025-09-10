@@ -1,12 +1,8 @@
 //  1. Create express app
-const express = require('express');
-const app = express();
 
 // 2. Create a home route page.
 
-app.get('/', function(req,res){
-    res.send("check he /user page")
-})
+
 // 3. what is dynamic routing
 // 🔀 1. Dynamic Routing
         // In Express.js, routes define how your app responds to URLs.
@@ -14,16 +10,21 @@ app.get('/', function(req,res){
         // Dynamic route: URL with a variable/parameter (e.g., /user/:id).
         // Useful when you want to load pages or data based on a parameter (like user profile, product page).
 
-app.get('/user/:id', function(req,res){
-    const userID = req.params.id;
-    res.send(`your requested Id: ${userID}`)
+
+const express = require('express')
+const app = express();
+
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + "/public"))
+
+app.get("/", function(req,res){
+    res.render("index", {name : "vraj"})
 })
 
-// step 4; listen the output on browser.
-app.listen(8080,function(){
-    console.log("server running on 8080");
-
+app.listen(2000, function(){
+    console.log("2000 is working again")
 })
+// Dynamic routing part
 
 
 // Important :
