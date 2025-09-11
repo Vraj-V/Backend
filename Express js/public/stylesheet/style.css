@@ -2,6 +2,8 @@
 
 *{
     color: red;
+    margin: 50px 100px;
+    font-size: 21px;
 }
 .name{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

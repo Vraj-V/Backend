@@ -9,8 +9,11 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 
-app.get("/", function(req,res){
-    res.render("index")
+app.get("/", function(req, res) {
+    res.render("index", { name: "Vraj" });  // <-- pass variable
+});
+app.get("/character", function(req, res) {
+    res.render("character");  // <-- pass variable
 });
 
 app.listen(5000,function(){
