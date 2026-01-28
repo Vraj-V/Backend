@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This repo is for learning and practicing backend all i learn and use for backend",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Hello world\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vraj-V/Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vraj-V/Backend/issues"
+  },
+  "homepage": "https://github.com/Vraj-V/Backend#readme",
+  "dependencies": {
+    "cat": "^0.2.0",
+    "cat-me": "^1.0.3",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.11"
+  }
+}
