@@ -1,0 +1,251 @@
+<html><head>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <title>Blue Lock Characters</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <meta charset="utf-8"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+          :root {
+            --neon-blue: #00CFFF;
+            --glowing-yellow: #FFD700;
+            --black: #0B0B0D;
+            --white: #F5F5F5;
+          }
+          .card {
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+          }
+          .card.flipped {
+            transform: rotateY(180deg);
+          }
+          .card-face {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+          }
+          .card-back {
+            transform: rotateY(180deg);
+          }
+          .group:hover .card {
+            transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
+            box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+          }
+          .group:hover .card-face-front {
+             box-shadow: 0 0 15px var(--neon-blue);
+          }
+          .nav-link:hover {
+            text-shadow: 0 0 8px var(--neon-blue);
+          }
+           .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--neon-blue);
+            transition: width .3s;
+            box-shadow: 0 0 5px var(--neon-blue);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        </style>
+    </head>
+    <body class="bg-[var(--black)] text-[var(--white)]" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+    <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+    <div class="absolute inset-0 z-0 opacity-10">
+    <div class="absolute top-[10%] left-[20%] size-8 rounded-full bg-[var(--glowing-yellow)] blur-2xl animate-pulse"></div>
+    <div class="absolute top-[50%] left-[80%] size-12 rounded-full bg-[var(--neon-blue)] blur-3xl animate-pulse delay-500"></div>
+    <div class="absolute top-[80%] left-[10%] size-6 rounded-full bg-[var(--glowing-yellow)] blur-2xl animate-pulse delay-1000"></div>
+    <div class="absolute top-[30%] left-[90%] size-10 rounded-full bg-[var(--neon-blue)] blur-3xl animate-pulse delay-1500"></div>
+    </div>
+    <div class="relative z-10 flex h-full grow flex-col">
+    <header class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#27363a] bg-[var(--black)]/80 px-10 py-4 backdrop-blur-sm">
+    <div class="flex items-center gap-3">
+    <svg class="h-8 w-8 text-[var(--neon-blue)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+    </svg>
+    <h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] bg-gradient-to-r from-[var(--neon-blue)] to-white bg-clip-text text-transparent">Blue Lock</h2>
+    </div>
+    <nav class="flex flex-1 justify-center gap-8">
+    <div class="flex items-center gap-9">
+    <a class="nav-link text-base font-medium leading-normal transition-all" href="index.ejs">Home</a>
+    <a class="nav-link text-base font-medium leading-normal transition-all" href="character.ejs">Characters</a>
+    <a class="nav-link text-base font-medium leading-normal transition-all" href="#">Matches</a>
+    <a class="nav-link text-base font-medium leading-normal transition-all" href="shop.ejs">Shop</a>
+    <a class="nav-link text-base font-medium leading-normal transition-all" href="#">About</a>
+    </div>
+    </nav>
+    <div class="flex items-center gap-4">
+    <button class="flex h-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-transparent text-[var(--white)] transition-colors hover:bg-[#27363a] hover:text-[var(--neon-blue)] p-2">
+    <svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+    </svg>
+    </button>
+    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-[var(--neon-blue)]" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLCqoZZjdMUq9Dw-Io_Ib39xdr8qb2rg3s_ZJlWJTRSgf4MQKsgK4kmhvhpEYTl38eLautKQyB7po-JH0LbKmj2jIAoksGuoJwr6oXbXvbzLdzPyZ5H-t1Q6dy8Oedpq4wYAUTp9mE9zT-APokOYikuxexMAnWSizokpZRVARPyN1MyTR8TY0N19EMuIo9jttFoKnEmUANgFH-WBzdVIT7NOKaMEYSYcACdBZo37_lhUO4r7KFUQiSCaSgRJpsRFFbIrA7PUFa0iI");'></div>
+    </div>
+    </header>
+    <main class="px-40 flex flex-1 justify-center py-12">
+    <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+    <h1 class="text-5xl font-bold leading-tight min-w-72 bg-gradient-to-r from-[var(--neon-blue)] to-[var(--white)] bg-clip-text text-transparent mb-8 text-center tracking-wider">CHARACTERS</h1>
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8">
+    <div class="group perspective-1000">
+    <div class="relative w-full aspect-[3/4] card">
+    <div class="absolute w-full h-full card-face card-face-front rounded-lg overflow-hidden border-2 border-transparent group-hover:border-[var(--neon-blue)] transition-all duration-300">
+    <div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4jzWqAAJQmgFrAhMm7UlbzqLcpZ2oCEJvQakMVHDlUsRj92vRBEXQTgXzX6xshdLzcf0du99zV_V8H510T5ys31Qz87dHK96OZERflreseQ224u0L9LoPleQ9-1y1DD7fSgjs5yrGt2q1zEoUExbnxM_hru0ZuuI1gL5e_UQuqZWRyphhUchgvPkGuXsiwYbGG0Hs2ZSdS66G4olD_fZTtxJdxWybQZYJhQm1ZYOk13ZHuX8jnLrEtp81hIiRf_IcuVAEQSAcnb8");'></div>
+    </div>
+    <div class="absolute w-full h-full card-face card-back bg-[#101718] rounded-lg border-2 border-[var(--neon-blue)] p-4 flex flex-col justify-center items-center text-center">
+    <h3 class="text-xl font-bold text-[var(--neon-blue)]">Isagi Yoichi</h3>
+    <p class="text-base mt-2">Position: <span class="font-semibold">Forward</span></p>
+    <p class="text-base mt-1">Ego Skill: <span class="font-semibold text-[var(--glowing-yellow)]">Spatial Awareness</span></p>
+    </div>
+    </div>
+    </div>
+    <div class="group perspective-1000">
+    <div class="relative w-full aspect-[3/4] card">
+    <div class="absolute w-full h-full card-face card-face-front rounded-lg overflow-hidden border-2 border-transparent group-hover:border-[var(--neon-blue)] transition-all duration-300">
+    <div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3ft36Smjp6B_Ja6m6h8hY3dtUfaAHUrZGn-79aVIUfrh27Y-sgSJvfN3IsKYpRe1SIKsjgwFJIat9uwjGfwQMCGimfi7GhiZ2LPCdQK0Qoz7uSnxqZ2BdtRN97aIJibcJ_-gum16n9fhyflEagq8BtgMH7cPah94koT6sFk9tV0fU-QgzhIrf-EXBZEXP1u8sy9uBQqv4pAqnolq10YWb_XKrTmyn_BwA_AM9KbZII5bmLVzAkAbJie35p7q7iWniW9MjKve-lTc");'></div>
+    </div>
+    <div class="absolute w-full h-full card-face card-back bg-[#101718] rounded-lg border-2 border-[var(--neon-blue)] p-4 flex flex-col justify-center items-center text-center">
+    <h3 class="text-xl font-bold text-[var(--neon-blue)]">Bachira Meguru</h3>
+    <p class="text-base mt-2">Position: <span class="font-semibold">Forward</span></p>
+    <p class="text-base mt-1">Ego Skill: <span class="font-semibold text-[var(--glowing-yellow)]">Dribbling Monster</span></p>
+    </div>
+    </div>
+    </div>
+    <div class="group perspective-1000">
+    <div class="relative w-full aspect-[3/4] card">
+    <div class="absolute w-full h-full card-face card-face-front rounded-lg overflow-hidden border-2 border-transparent group-hover:border-[var(--neon-blue)] transition-all duration-300">
+    <div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOuMeYzDOtr7HKKlSwuQNa4vvARhgDJ7Eh7ooFNWAZyi-MbleLh6QSbJu25VhxOXM4Kypw65JL7i5NuRQ4rUovZBI3YHIQIgnI501yjQjJ-FxM7Rhwmh89G-RsjJREpvEn3leR9BhcWi5WD56mCYKtHOUFocXMSZ4ygHH7QcjvIlGAJl-F_Wv0AKpSPpjAXNrAhTsbYgXk_e9VdQKjF7Sykep5dhNPKTLWkFW8zVggwAD-AI-oaHVWE9L_bxMsjTbzxc_yP85LXkQ");'></div>
+    </div>
+    <div class="absolute w-full h-full card-face card-back bg-[#101718] rounded-lg border-2 border-[var(--neon-blue)] p-4 flex flex-col justify-center items-center text-center">
+    <h3 class="text-xl font-bold text-[var(--neon-blue)]">Kunigami Rensuke</h3>
+    <p class="text-base mt-2">Position: <span class="font-semibold">Forward</span></p>
+    <p class="text-base mt-1">Ego Skill: <span class="font-semibold text-[var(--glowing-yellow)]">Mid-Range Shot</span></p>
+    </div>
+    </div>
+    </div>
+    <div class="group perspective-1000">
+    <div class="relative w-full aspect-[3/4] card">
+    <div class="absolute w-full h-full card-face card-face-front rounded-lg overflow-hidden border-2 border-transparent group-hover:border-[var(--neon-blue)] transition-all duration-300">
+    <div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQR3SaE7BXaZAM8tn4FIsgMpUEcdftjn9CL_OPGKsiskvJXi8JeOp3nxvy2cmkpGw7khPI5kQV6tscVaB-A7Mwu03S3UQ_Ddh5NhYIHD0pAKcYTZVG5IuGHQu3H2EKslXP7Ei94aS_P1p_3KXQJLFh5FLLho-SzAa8ug1SRH7G81tgMWpVXz8puI7Yq7NknPKcx7nwtXWzIMy2Af71goc6YxFwbl8pHpiiR1lwe2R0NZGZDGtCP_353PWSoZs1gh1RuBWgVcw4Oak");'></div>
+    </div>
+    <div class="absolute w-full h-full card-face card-back bg-[#101718] rounded-lg border-2 border-[var(--neon-blue)] p-4 flex flex-col justify-center items-center text-center">
+    <h3 class="text-xl font-bold text-[var(--neon-blue)]">Chigiri Hyoma</h3>
+    <p class="text-base mt-2">Position: <span class="font-semibold">Forward</span></p>
+    <p class="text-base mt-1">Ego Skill: <span class="font-semibold text-[var(--glowing-yellow)]">Unrivaled Speed</span></p>
+    </div>
+    </div>
+    </div>
+    <div class="group perspective-1000">
+    <div class="relative w-full aspect-[3/4] card">
+    <div class="absolute w-full h-full card-face card-face-front rounded-lg overflow-hidden border-2 border-transparent group-hover:border-[var(--neon-blue)] transition-all duration-300">
+    <div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKf_NXX5SrcNy_Zl9Zb6C5j8F6mD3L7fOIuVopYadXAWtOGnT3VifEEyo7-Id0B9W5YAeVTPLR9i3T_VmIkzODKgNZ3DfGY2LjMIZ3PHMC-yIqyVFwVp0MZVDTgV7nnbG-n2pNVW4F8qdsmYt-9mVx7Z3sxFoWmWoiXOfKuRgBZctRAQoz_2rF5wq9MzwKFQaVadJJt7m3VebSRvhx9P4D9dItLbpS_I0TTcoxAJv_QNjsCwu7EpGBvx1ElGf7ms7KGxRF72LiRuU");'></div>
+    </div>
+    <div class="absolute w-full h-full card-face card-back bg-[#101718] rounded-lg border-2 border-[var(--neon-blue)] p-4 flex flex-col justify-center items-center text-center">
+    <h3 class="text-xl font-bold text-[var(--neon-blue)]">Nagi Seishiro</h3>
+    <p class="text-base mt-2">Position: <span class="font-semibold">Forward</span></p>
+    <p class="text-base mt-1">Ego Skill: <span class="font-semibold text-[var(--glowing-yellow)]">Perfect Trapping</span></p>
+    </div>
+    </div>
+    </div>
+    <div class="group perspective-1000">
+    <div class="relative w-full aspect-[3/4] card">
+    <div class="absolute w-full h-full card-face card-face-front rounded-lg overflow-hidden border-2 border-transparent group-hover:border-[var(--neon-blue)] transition-all duration-300">
+    <div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbGXXVzNU9ghKyyZPiSlLSm8TLkyTwJ4MKdVFiUO8ITYSJJnOki4JYZiL3v9V2SEcpDSFUKI4krlxOddWrZQVlFOO5K1MXsrEUWMtViY4GlbKH5RZe0IIGa3tbCZM4mBa7wPJyuMOPltaOWvAAGO9CG9QDxASBzh8rDZGBx454lMG8GQpKZ0T45qL0ELH4LvxW9_bGxdR67qKplYbBjI602yQC7JGqEcPXeuj-hEvXugobsYXjrSPRK9ELv-6sMbHeg0vVBeVVOXg");'></div>
+    </div>
+    <div class="absolute w-full h-full card-face card-back bg-[#101718] rounded-lg border-2 border-[var(--neon-blue)] p-4 flex flex-col justify-center items-center text-center">
+    <h3 class="text-xl font-bold text-[var(--neon-blue)]">Mikage Reo</h3>
+    <p class="text-base mt-2">Position: <span class="font-semibold">Forward</span></p>
+    <p class="text-base mt-1">Ego Skill: <span class="font-semibold text-[var(--glowing-yellow)]">Copycat</span></p>
+    </div>
+    </div>
+    </div>
+    <div class="group perspective-1000">
+    <div class="relative w-full aspect-[3/4] card">
+    <div class="absolute w-full h-full card-face card-face-front rounded-lg overflow-hidden border-2 border-transparent group-hover:border-[var(--neon-blue)] transition-all duration-300">
+    <div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD12VtbRhDEp1PlBnh2o9Ie2XXHRyI0UqkaQwy9T1b545lmNZGXrrQYI7kYo1O_rvTlN7t8C4--bthI-Jvfh9DEo0DaqiZM5zHTCbJ8FuGq3gASP2lqbbe_AmaRtLbXSlwshf-zJDYy4C7Ak1lP8uQO7yXRKigxj9ygR86O_scOs885DQn-cTA15lfvb60yIqpuKjLWZV62vhRo0vyHj2u7gEQ17RLIYGDdEfwglm56x-_I4uBJnDBPravzAZkPKwPIbAq9zoBwKic");'></div>
+    </div>
+    <div class="absolute w-full h-full card-face card-back bg-[#101718] rounded-lg border-2 border-[var(--neon-blue)] p-4 flex flex-col justify-center items-center text-center">
+    <h3 class="text-xl font-bold text-[var(--neon-blue)]">Itoshi Rin</h3>
+    <p class="text-base mt-2">Position: <span class="font-semibold">Forward</span></p>
+    <p class="text-base mt-1">Ego Skill: <span class="font-semibold text-[var(--glowing-yellow)]">Puppet Master</span></p>
+    </div>
+    </div>
+    </div>
+    <div class="group perspective-1000">
+    <div class="relative w-full aspect-[3/4] card">
+    <div class="absolute w-full h-full card-face card-face-front rounded-lg overflow-hidden border-2 border-transparent group-hover:border-[var(--neon-blue)] transition-all duration-300">
+    <div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCo-z1kYXZzJoI6pGnlnMd3tonMGZD6v_5654KCHZQll2m0TgGwVRZz-ZciHFya03QXQtp9h1r_Cv4shWVmDh57Dlyid1laQk9pnDyac-lyCYWn_LjypXvbMJ49NbAwhQua8-XS3UrJU4FVr4Z6MRY734hPhVbGlHtg0njeOwe6zO6pq9n7adljBxHMlyE04sbpaFPghLvozTeXyAvaSOIZNiXAK_XvZTdMY0rhquyzqDJWcDUCNUZYMx91gc0xZvQLLZzbcJF6vpE");'></div>
+    </div>
+    <div class="absolute w-full h-full card-face card-back bg-[#101718] rounded-lg border-2 border-[var(--neon-blue)] p-4 flex flex-col justify-center items-center text-center">
+    <h3 class="text-xl font-bold text-[var(--neon-blue)]">Barou Shoei</h3>
+    <p class="text-base mt-2">Position: <span class="font-semibold">Forward</span></p>
+    <p class="text-base mt-1">Ego Skill: <span class="font-semibold text-[var(--glowing-yellow)]">King's Charge</span></p>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="flex items-center justify-center p-8">
+    <a class="flex size-10 items-center justify-center text-white/50 hover:text-[var(--neon-blue)] transition-colors" href="#">
+    <svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+    </svg>
+    </a>
+    <a class="text-base font-bold leading-normal flex size-10 items-center justify-center text-[var(--black)] rounded-md bg-[var(--neon-blue)] mx-1 shadow-[0_0_10px_var(--neon-blue)]" href="#">1</a>
+    <a class="text-base font-normal leading-normal flex size-10 items-center justify-center text-white/80 rounded-md hover:bg-[#27363a] hover:text-[var(--neon-blue)] transition-colors mx-1" href="#">2</a>
+    <a class="text-base font-normal leading-normal flex size-10 items-center justify-center text-white/80 rounded-md hover:bg-[#27363a] hover:text-[var(--neon-blue)] transition-colors mx-1" href="#">3</a>
+    <a class="text-base font-normal leading-normal flex size-10 items-center justify-center text-white/80 rounded-md hover:bg-[#27363a] hover:text-[var(--neon-blue)] transition-colors mx-1" href="#">4</a>
+    <a class="text-base font-normal leading-normal flex size-10 items-center justify-center text-white/80 rounded-md hover:bg-[#27363a] hover:text-[var(--neon-blue)] transition-colors mx-1" href="#">5</a>
+    <a class="flex size-10 items-center justify-center text-white/50 hover:text-[var(--neon-blue)] transition-colors" href="#">
+    <svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+    </svg>
+    </a>
+    </div>
+    </div>
+    </main>
+    <footer class="border-t border-solid border-t-[#27363a]">
+    <div class="container mx-auto px-5 py-8">
+    <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+    <div class="flex items-center gap-3 justify-center sm:justify-start">
+    <svg class="h-8 w-8 text-[var(--neon-blue)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+    </svg>
+    <h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] bg-gradient-to-r from-[var(--neon-blue)] to-white bg-clip-text text-transparent">Blue Lock</h2>
+    </div>
+    <p class="text-base text-white/60 mt-4 sm:mt-0">© 2024 Blue Lock. All rights reserved.</p>
+    <div class="flex gap-4 mt-4 sm:mt-0">
+    <a class="text-white/60 hover:text-[var(--neon-blue)] transition-colors hover:drop-shadow-[0_0_5px_var(--neon-blue)]" href="#">
+    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+    </svg>
+    </a>
+    <a class="text-white/60 hover:text-[var(--neon-blue)] transition-colors hover:drop-shadow-[0_0_5px_var(--neon-blue)]" href="#">
+    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+    </svg>
+    </a>
+    <a class="text-white/60 hover:text-[var(--neon-blue)] transition-colors hover:drop-shadow-[0_0_5px_var(--neon-blue)]" href="#">
+    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+    </svg>
+    </a>
+    </div>
+    </div>
+    </div>
+    </footer>
+    </div>
+    </div>
+    <script>
+          const cards = document.querySelectorAll('.card');
+          cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+              card.classList.add('flipped');
+            });
+            card.addEventListener('mouseleave', () => {
+              card.classList.remove('flipped');
+            });
+          });
+        </script>
+    
+    </body></html>

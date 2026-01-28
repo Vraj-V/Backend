@@ -1,0 +1,227 @@
+<html><head>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700&amp;family=Cyberpunk:wght@400" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <title>Blue Lock Shop</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <meta charset="utf-8"/>
+    <style type="text/tailwindcss">
+          :root {
+            --neon-blue: #00cfff;
+            --black: #0b0b0d;
+            --white: #f5f5f5;
+            --yellow-accent: #ffd700;
+          }
+          @keyframes float {
+            0%,
+            100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-20px);
+            }
+          }
+          .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 207, 255, 0.5) 0%, rgba(0, 207, 255, 0) 70%);
+            animation: float 6s ease-in-out infinite;
+          }
+          .particle.football {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300CFFF"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 16.93c-2.49-.49-4.43-2.43-4.92-4.93H11v4.93zm2-11.86c.49 2.5 2.43 4.43 4.93 4.93V12h-4.93V7.07zM12 4.07c2.49.49 4.43 2.43 4.92 4.93H12V4.07zM7.07 9.07c-.49-2.5-2.43-4.43-4.93-4.93V9.07h4.93zM9.07 14.93c-2.5-.49-4.43-2.43-4.93-4.93H9.07v4.93zm3.93 4.93v-4.93h4.93c-.49 2.5-2.43 4.43-4.93 4.93zm4.93-6.93H13V7.07c2.5.49 4.43 2.43 4.93 4.93z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+          .card {
+            transform-style: preserve-3d;
+            transition: transform 0.5s, box-shadow 0.5s;
+          }
+          .card:hover {
+            transform: perspective(1000px) rotateY(5deg) rotateX(5deg) scale(1.05);
+            box-shadow: 0 0 20px 5px var(--neon-blue), 0 0 30px 10px var(--yellow-accent);
+          }
+          .buy-button {
+            transition: transform 0.3s, box-shadow 0.3s;
+          }
+          .buy-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--neon-blue);
+          }
+          .nav-link {
+            position: relative;
+          }
+          .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: var(--neon-blue);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px var(--neon-blue);
+          }
+          .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+          }
+          .cyberpunk-heading {
+            font-family: 'Cyberpunk', 'Space Grotesk', sans-serif;
+            background: linear-gradient(90deg, var(--neon-blue), var(--yellow-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 5px var(--neon-blue);
+          }
+          .social-icon:hover {
+            color: var(--neon-blue);
+            filter: drop-shadow(0 0 5px var(--neon-blue));
+            transform: scale(1.1);
+            transition: all 0.3s;
+          }
+        </style>
+    </head>
+    <body style="font-family: 'Space Grotesk', 'Noto Sans', sans-serif;">
+    <div class="relative flex size-full min-h-screen flex-col bg-black text-white group/design-root overflow-x-hidden">
+    <div class="particle football" style="width: 30px; height: 30px; top: 20%; left: 10%; animation-duration: 8s;"></div>
+    <div class="particle football" style="width: 20px; height: 20px; top: 50%; left: 80%; animation-duration: 12s;"></div>
+    <div class="particle" style="width: 10px; height: 10px; top: 80%; left: 25%; animation-duration: 10s;"></div>
+    <div class="particle" style="width: 15px; height: 15px; top: 10%; left: 90%; animation-duration: 7s;"></div>
+    <div class="layout-container flex h-full grow flex-col">
+    <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[rgba(0,207,255,0.2)] bg-[var(--black)]/80 px-10 py-4 backdrop-blur-sm">
+    <div class="flex items-center gap-4 text-[var(--neon-blue)]">
+    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path clip-rule="evenodd" d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM11.1999 15.5L8.29282 18.4071C8.68335 18.7976 9.12351 19.1418 9.5999 19.4285V15.5H11.1999ZM12.7999 19.4285C13.2763 19.1418 13.7165 18.7976 14.107 18.4071L11.1999 15.5H12.7999V19.4285ZM12.7999 13.9H16.6284C16.8667 13.4307 17 12.9255 17 12.4C17 11.8745 16.8667 11.3693 16.6284 10.9H12.7999V13.9ZM11.1999 13.9V10.9H7.3715C7.13324 11.3693 7 11.8745 7 12.4C7 12.9255 7.13324 13.4307 7.3715 13.9H11.1999ZM9.5999 9.3H11.1999V5.37148C10.7235 5.6582 10.2834 6.00236 9.89285 6.39289L12.7999 9.3H9.5999ZM14.107 6.39289C13.7165 6.00236 13.2763 5.6582 12.7999 5.37148V9.3H14.107L14.107 6.39289Z" fill-rule="evenodd"></path>
+    </svg>
+    <h2 class="cyberpunk-heading text-2xl font-bold">BLUE LOCK</h2>
+    </div>
+    <nav class="flex flex-1 justify-center gap-8">
+    <a class="nav-link text-white text-base font-medium" href="#">Home</a>
+    <a class="nav-link text-white text-base font-medium" href="#">Characters</a>
+    <a class="nav-link text-white text-base font-medium" href="#">Matches</a>
+    <a class="nav-link text-[var(--neon-blue)] text-base font-bold" href="#">Shop</a>
+    <a class="nav-link text-white text-base font-medium" href="#">About</a>
+    </nav>
+    <div class="flex items-center gap-4">
+    <button class="text-[var(--white)] hover:text-[var(--neon-blue)] transition-colors">
+    <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+    </svg>
+    </button>
+    <button class="text-[var(--white)] hover:text-[var(--neon-blue)] transition-colors">
+    <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"></path>
+    </svg>
+    </button>
+    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-[var(--neon-blue)]" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBS-PiJXP_3uV3iGoz1Yf7Z3RmuXxBw7y9zOeiKOKT5LlBbfJ0xAyAws3cTKFRSQCArdLRmXn1YGAIf8Pt3YoqrW7u631jO8M_LLxqwpgKVq6Ov73tujZ71PXzmQDGhBsjbzA3MKUfRjz3bxgCuYyD7qAV2Q6Y_1qp7z-W9_iJN97G4EUCXpSsi2CFX0LYFRM47Na1Rs9KaDrB1jpc18Y-XOva-2T-mW66H9BYwXRY5N-UoAIEx1rp7RAsnusl9W0FHOmjUNFCJBKA");'></div>
+    </div>
+    </header>
+    <main class="px-40 flex flex-1 justify-center py-10">
+    <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+    <h1 class="cyberpunk-heading tracking-wider text-5xl font-bold min-w-72 p-4 text-center mb-8">Shop</h1>
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 p-4">
+    <div class="card flex flex-col gap-4 bg-[#111113] rounded-lg overflow-hidden border border-[rgba(0,207,255,0.2)]">
+    <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDceXHtzH8_ykhk2Eu7j9SwPZIhpwjq45uTlNXSFh_boNhl9QktOWKsBDhFdx_xcb35XcZOjMfyQAtK8lksAwAKmdvtRlWgWXowXQ6tGh3A_xX1HbpyiupdjTNlIMR8C8HHWl7UWMlS57ENCilq1a3GIPxa9mGFBhojBpg9smr_NpzdgkWJD7t7ytbx5aZi-RRZzh8HhWchBK8jJUbAdJviklyxMhjwSaBT3UJ0olG20TlLOQ2rLBGiqIMCopI0udkeL_JqboepwbE");'></div>
+    <div class="p-4 flex flex-col flex-grow">
+    <p class="text-[var(--white)] text-lg font-bold">Blue Lock Jersey</p>
+    <p class="text-[var(--neon-blue)] text-xl font-semibold my-2">$59.99</p>
+    <button class="buy-button mt-auto w-full rounded-md bg-[var(--neon-blue)] text-black py-2 px-4 font-bold">Buy Now</button>
+    </div>
+    </div>
+    <div class="card flex flex-col gap-4 bg-[#111113] rounded-lg overflow-hidden border border-[rgba(0,207,255,0.2)]">
+    <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAZacLjXLBOLffJxfN7tdhDxlhvHk0-GgBlZqQASyB-jcykf-U5l9OtxvwdDdiDOLeIP2veWJJyjTPv-lg8PxII1K2C1X1tDXlzDQ5GncMmnOoF9HkdS8Ba-SCkhOb__WJO0SlWxsGLvpbsToxrmUvvJWfayEDwfN2HZWVma_qRDEJKpLD8NDNX5WXkErM5YFXt_vFh4_dc0RMhxPxiDr4SfummfgJpQCasgtsRCgDLInZKHOHkYdA2pNFcq8mOodswHerTlRHgF0");'></div>
+    <div class="p-4 flex flex-col flex-grow">
+    <p class="text-[var(--white)] text-lg font-bold">Blue Lock Training Kit</p>
+    <p class="text-[var(--neon-blue)] text-xl font-semibold my-2">$79.99</p>
+    <button class="buy-button mt-auto w-full rounded-md bg-[var(--neon-blue)] text-black py-2 px-4 font-bold">Buy Now</button>
+    </div>
+    </div>
+    <div class="card flex flex-col gap-4 bg-[#111113] rounded-lg overflow-hidden border border-[rgba(0,207,255,0.2)]">
+    <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1CQHnQ7g0xnU1X_UMCb0-NwwByGf-3nYzI3Y7qapKUgDswdiPH-DVV_f6OYGmq59umfXyvCgKuHQKzYqdPV6HX7EvfRQQIWK8iHDhzSj1qOFSDdEL7FNqIsb9KBw8Pv7GcQVmvaPMcKhOK3rcDwOZYM3Wt3ZUUYRGawUFhAGM7dI81O75gve10_knnrVp-Ih_WuOI3p2bSgfVVFGEFgU4OP9qeHwAvnzUC8ULRbZKllR5m4J0NmH3CVpI21yt4EuZ-xwiOe7jMQE");'></div>
+    <div class="p-4 flex flex-col flex-grow">
+    <p class="text-[var(--white)] text-lg font-bold">Blue Lock Hoodie</p>
+    <p class="text-[var(--neon-blue)] text-xl font-semibold my-2">$49.99</p>
+    <button class="buy-button mt-auto w-full rounded-md bg-[var(--neon-blue)] text-black py-2 px-4 font-bold">Buy Now</button>
+    </div>
+    </div>
+    <div class="card flex flex-col gap-4 bg-[#111113] rounded-lg overflow-hidden border border-[rgba(0,207,255,0.2)]">
+    <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmYeOU-4LOc4r0N4kL_TJYwJeA8Sq0o5cZ2a7ZAts1gNVfcB0bIhUSjuZN4iUhm2yQiPjP0vP46-0_dc676DgoxDEp406gRLCHkULLkEOdbk4Bjrg9G2sXpQA1NCAb0L_PKWfWuZFvYK7Ac_E3vgyHQsqCThLAX7YIoJGCdxuFjcVoEYzzbkxMnkmoVllRMJGOW63iIyRpJTxES2WCQSmTCEUjvdLSVHs96V2sR-uuA837NNKqyj0ObVjLohnKoaLPW9TP-CljbhI");'></div>
+    <div class="p-4 flex flex-col flex-grow">
+    <p class="text-[var(--white)] text-lg font-bold">Blue Lock Cap</p>
+    <p class="text-[var(--neon-blue)] text-xl font-semibold my-2">$29.99</p>
+    <button class="buy-button mt-auto w-full rounded-md bg-[var(--neon-blue)] text-black py-2 px-4 font-bold">Buy Now</button>
+    </div>
+    </div>
+    <div class="card flex flex-col gap-4 bg-[#111113] rounded-lg overflow-hidden border border-[rgba(0,207,255,0.2)]">
+    <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAL4Vqf-VX8B230-clJ1r5u2m3xNiz1pRim0n5m1lRGg3k_-PI6Y2KnDc4qIENDlmhx-1YQ2q9QfOfdpnSXPmbizTr30-1iuUYjF1PgyH40iXDc29wSAEGdqixFHIQIDsJZ1yEOU_E0Lp1orZZqdfaTP7FcJi1G4Vt3UXkowX6sFyvRzIMLhM_8uNQhnKRR3BRj7EhljmreHQLxC_LkfB93csIAVRnmr7h41N-0tA--GM-1Xsxh68aIzMiejuqNOLsJKbK2o29f7M0");'></div>
+    <div class="p-4 flex flex-col flex-grow">
+    <p class="text-[var(--white)] text-lg font-bold">Blue Lock Scarf</p>
+    <p class="text-[var(--neon-blue)] text-xl font-semibold my-2">$19.99</p>
+    <button class="buy-button mt-auto w-full rounded-md bg-[var(--neon-blue)] text-black py-2 px-4 font-bold">Buy Now</button>
+    </div>
+    </div>
+    <div class="card flex flex-col gap-4 bg-[#111113] rounded-lg overflow-hidden border border-[rgba(0,207,255,0.2)]">
+    <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAx2l1GVcCNQAsFtQGANke8JDc2o94JcA21O9y9uUnnjFkAK3H8C-u9YOlop6qDGfI-LTSnq4Wgkd4SbnAeCMoBV6lhiuePxcsliuJFYbrgzfNZWxVGt7LAEusl05QhmV1xe8YPtxWlzYuSIep_wT31LaPClQDlGc2T6xzFzi2QSuwRyc_DxoDNN4dk8VBVMUwyzMWPkzUvq7KsIZY76ONxGZrPkfTK6158SsanxQ0UCjYI8Rf-EmIhMTevGNIqd8X-3t25VpkqCrE");'></div>
+    <div class="p-4 flex flex-col flex-grow">
+    <p class="text-[var(--white)] text-lg font-bold">Blue Lock Backpack</p>
+    <p class="text-[var(--neon-blue)] text-xl font-semibold my-2">$69.99</p>
+    <button class="buy-button mt-auto w-full rounded-md bg-[var(--neon-blue)] text-black py-2 px-4 font-bold">Buy Now</button>
+    </div>
+    </div>
+    </div>
+    <div class="flex items-center justify-center p-4 mt-8">
+    <a class="flex size-10 items-center justify-center text-white hover:text-[var(--neon-blue)] transition-colors" href="#">
+    <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+    </svg>
+    </a>
+    <a class="text-base font-bold flex size-10 items-center justify-center text-black rounded-full bg-[var(--neon-blue)] mx-1" href="#">1</a>
+    <a class="text-base font-medium flex size-10 items-center justify-center text-white rounded-full hover:bg-[var(--neon-blue)] hover:text-black transition-colors mx-1" href="#">2</a>
+    <a class="text-base font-medium flex size-10 items-center justify-center text-white rounded-full hover:bg-[var(--neon-blue)] hover:text-black transition-colors mx-1" href="#">3</a>
+    <a class="flex size-10 items-center justify-center text-white hover:text-[var(--neon-blue)] transition-colors" href="#">
+    <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+    </svg>
+    </a>
+    </div>
+    </div>
+    </main>
+    <footer class="bg-[#0B0B0D] border-t border-solid border-[rgba(0,207,255,0.2)]">
+    <div class="container mx-auto px-5 py-8">
+    <div class="flex flex-col items-center">
+    <div class="flex items-center gap-4 text-[var(--neon-blue)] mb-4">
+    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path clip-rule="evenodd" d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM11.1999 15.5L8.29282 18.4071C8.68335 18.7976 9.12351 19.1418 9.5999 19.4285V15.5H11.1999ZM12.7999 19.4285C13.2763 19.1418 13.7165 18.7976 14.107 18.4071L11.1999 15.5H12.7999V19.4285ZM12.7999 13.9H16.6284C16.8667 13.4307 17 12.9255 17 12.4C17 11.8745 16.8667 11.3693 16.6284 10.9H12.7999V13.9ZM11.1999 13.9V10.9H7.3715C7.13324 11.3693 7 11.8745 7 12.4C7 12.9255 7.13324 13.4307 7.3715 13.9H11.1999ZM9.5999 9.3H11.1999V5.37148C10.7235 5.6582 10.2834 6.00236 9.89285 6.39289L12.7999 9.3H9.5999ZM14.107 6.39289C13.7165 6.00236 13.2763 5.6582 12.7999 5.37148V9.3H14.107L14.107 6.39289Z" fill-rule="evenodd"></path>
+    </svg>
+    <h2 class="cyberpunk-heading text-2xl font-bold">BLUE LOCK</h2>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-6 my-4">
+    <a class="text-gray-400 hover:text-white text-base font-normal transition-colors" href="#">Terms of Service</a>
+    <a class="text-gray-400 hover:text-white text-base font-normal transition-colors" href="#">Privacy Policy</a>
+    <a class="text-gray-400 hover:text-white text-base font-normal transition-colors" href="#">Contact Us</a>
+    </div>
+    <div class="flex justify-center gap-6 my-4">
+    <a class="social-icon text-gray-400" href="#">
+    <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+    </svg>
+    </a>
+    <a class="social-icon text-gray-400" href="#">
+    <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+    </svg>
+    </a>
+    <a class="social-icon text-gray-400" href="#">
+    <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+    </svg>
+    </a>
+    </div>
+    <p class="text-gray-500 text-sm mt-4">@2024 Blue Lock. All rights reserved.</p>
+    </div>
+    </div>
+    </footer>
+    </div>
+    </div>
+    
+    </body></html>
