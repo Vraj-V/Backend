@@ -19,6 +19,8 @@ app.get('/about', (req, res) => {
     res.send('About Page.');
 });
 
+
+// Create operation in database
 app.get('/register',(req,res)=>{
     res.render('register')
 })
@@ -34,6 +36,41 @@ app.post('/register',async (req,res)=>{
     })
 
     res.send(newUser)
+})
+
+// Read operation from database
+
+app.get('/get-users',(req,res)=>{
+    userModel.find({userName:'a'}).then((result)=>{
+        res.send(result)
+    })
+})
+
+
+app.get('/getUsers',(req,res)=>{
+    userModel.findOne({userName:'a'}).then((result)=>{
+        res.send(result);
+    })
+})
+
+
+// Update operation from database.
+app.get('/update-user', async (req,res)=>{
+    await userModel.findOneAndUpdate({userName: 'a'},{
+        email:'c@c.com'
+    }).then((result)=>{
+        res.send("user update")
+    })
+})
+
+// delete operation from database.
+
+app.get('/delete-user',async (req,res)=>{
+    await userModel.findOneAndDelete({
+        userName:'a'
+    }).then((result)=>{
+        res.send('User deleted');
+    });
 })
 
 

@@ -1,3 +1,10 @@
 body{
-    background-color: blueviolet;
+    background-color: black;
+    color: white;
+}
+h1{
+    color: red;
+}
+big{
+    color: pink;
 }

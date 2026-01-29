@@ -3,6 +3,7 @@ const app = express()
 const morgan = require('morgan')
 
 app.use(morgan('dev'));
+app.use(express.static('public'))
 
 app.set('view engine','ejs')
 
