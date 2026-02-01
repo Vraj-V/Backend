@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const userRouter = require('./routers/user.router.js')
+const dotenv = require('dotenv')
+const connnectToDB = require('./config/db.js')
+
+
+dotenv.config();
+connnectToDB();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
