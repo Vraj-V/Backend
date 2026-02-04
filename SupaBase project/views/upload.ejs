@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Upload File</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      border-radius: 22px;
+      padding: 45px 50px;
+      width: 90%;
+      max-width: 520px;
+      text-align: center;
+      animation: fadeUp 0.9s ease forwards;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      color: #4ade80;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .upload-area {
+      border: 2.5px dashed #4ade80;
+      border-radius: 18px;
+      padding: 45px 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .upload-area:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: scale(1.01);
+    }
+
+    .upload-icon {
+      font-size: 52px;
+      margin-bottom: 18px;
+      color: #4ade80;
+    }
+
+    .file-label {
+      font-size: 16px;
+      opacity: 0.85;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .file-name {
+      margin-top: 15px;
+      padding: 10px 14px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 14px 38px;
+      border-radius: 30px;
+      background: #4ade80;
+      color: #0f2027;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover:not(:disabled) {
+      background: #22c55e;
+      transform: translateY(-3px);
+    }
+
+    .btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .btn-back{
+        /* margin-top: 30px; */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 4px 10px;
+        border-radius: 30px;
+        background: #ffffff;
+        color: #4ade80;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1><i class="fa-solid fa-folder-open"></i> Upload Your File</h1>
+
+    <form action="/user/upload" method="POST" enctype="multipart/form-data">
+      <div
+        class="upload-area"
+        onclick="document.getElementById('fileInput').click()"
+      >
+        <div class="upload-icon">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+        </div>
+        <div class="file-label">Click to select a file</div>
+        <input type="file" name="file" id="fileInput" required />
+      </div>
+
+      <div class="file-name" id="fileName"></div>
+
+      <button class="btn" id="uploadBtn" disabled>Upload File</button>
+    </form>
+  </div>
+  <div>
+    <a href="/">
+      <button class="btn-back">X</button>
+    </a>
+  </div>
+  <script>
+    const fileInput = document.getElementById("fileInput");
+    const fileName = document.getElementById("fileName");
+    const uploadBtn = document.getElementById("uploadBtn");
+
+    fileInput.addEventListener("change", () => {
+      if (fileInput.files.length > 0) {
+        fileName.style.display = "block";
+        fileName.textContent = "📄 " + fileInput.files[0].name;
+        uploadBtn.disabled = false;
+      } else {
+        fileName.style.display = "none";
+        uploadBtn.disabled = true;
+      }
+    });
+  </script>
+</body>
+</html>
