@@ -17,7 +17,7 @@ app.get('/sum',(req,res)=>{
 const a = Number(req.query.a);
 const b = Number(req.query.b);
 
-if(!a||!b){
+if(isNaN(a)|| isNaN(b)){
     return  res.status(400).json({error:'a and b are required!'})
 }
 res.json({
@@ -29,7 +29,7 @@ app.get('/sub',(req,res)=>{
     const c = Number(req.query.c);
     const d = Number(req.query.d);
 
-    if(!c || !d){
+    if(isNaN(c) || isNaN(d)){
        return res.status(400).json({error:'c and d both requiered'})
     }
 
@@ -39,14 +39,13 @@ app.get('/sub',(req,res)=>{
         operation: `-`,
         result: c - d
     })
-    res.send(result);
 })
 
 app.get('/mult',(req,res)=>{
     const a = Number(req.query.a);
     const b = Number(req.query.b);
 
-    if(!a || !b){
+    if(isNaN(a) || isNaN(b)){
        return res.status(400).json({Error:"a and b are required."});
     }
     res.json({
@@ -61,7 +60,7 @@ app.get('/login',(req,res)=>{
 app.post('/login',(req,res)=>{
     const {username, password,age} = req.body
 
-    if(!username || !password || !age){
+    if(!username || !password || isNaN(age)){
         return res.status(400).json({error:'usename  and password missing'})
     }
 
