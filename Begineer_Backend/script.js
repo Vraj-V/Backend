@@ -42,23 +42,37 @@ app.get('/sub',(req,res)=>{
     res.send(result);
 })
 
+app.get('/mult',(req,res)=>{
+    const a = Number(req.query.a);
+    const b = Number(req.query.b);
+
+    if(!a || !b){
+       return res.status(400).json({Error:"a and b are required."});
+    }
+    res.json({
+        result: a * b
+    })
+}) //Multiplication.
+
 app.get('/login',(req,res)=>{
     res.render('login')
-})
+}) //user handing (Frontend to create UI and getting a data.)
 
 app.post('/login',(req,res)=>{
-    const {username, password} = req.body
+    const {username, password,age} = req.body
 
-    if(!username || !password){
+    if(!username || !password || !age){
         return res.status(400).json({error:'usename  and password missing'})
     }
 
-    if(username ==="admin" && password ==='1234'){
-        return res.status(200).json({message:"Login Successfull"});
+    if(username ==="admin" && password ==='1234' && age >=18  && age <100){
+        return res.status(200).json({message:"Login Successfull and welcome"});
     }
 
     res.status(401).json({error:'invalid  credintials.'})
-})
+})  //return output by API.
+
+
 
 // listen the port;
 app.listen(3000,()=>{
