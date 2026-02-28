@@ -15,10 +15,11 @@ const Login = () => {
       console.log(result)
       if(result.data ==="Success"){
         navigate('/home');
+      }else{
+        navigate('*');
       }
     })
   },[Email,Password,navigate]);
-
 
   return (
             <div className='d-flex justify-content-center align-items-center bg-secondary vh-100'>
