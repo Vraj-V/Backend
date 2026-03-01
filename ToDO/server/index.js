@@ -2,6 +2,10 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import TodoModel from './Models/Todo.js'
+import dotenv from 'dotenv'
+
+// Load environment variables
+dotenv.config()
 
 // const express = require('express')
 // const cors = require('cors')
@@ -12,7 +16,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect('mongodb://127.0.0.1:27017/todoapp')
+const mongoURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/todoapp'
+mongoose.connect(mongoURI)
 
 app.get('/get',(req,res)=>{
     TodoModel.find()
@@ -42,6 +47,7 @@ app.delete('/delete/:id', (req,res)=>{
     .then(result => res.json(result))
     .catch(err => res.json(err))})
 
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!')
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`)
 })

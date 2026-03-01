@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import API_URL from '../config'
 
 
 const Create = ({ todos ,setTodos }) => {
@@ -13,7 +14,7 @@ const Create = ({ todos ,setTodos }) => {
   const handleSubmit = (e) => { 
     e.preventDefault()
 
-    axios.post('http://localhost:3000/add', { task: input })
+    axios.post(`${API_URL}/add`, { task: input })
     .then(response => {
         location.reload()
       console.log('Todo added:', response.data)

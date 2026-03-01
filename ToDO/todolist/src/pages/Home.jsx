@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Create from '../components/Create'
 import axios from 'axios';
 import { BsCircleFill, BsFillTrashFill,BsFillCheckCircleFill } from 'react-icons/bs';
+import API_URL from '../config'
 const Home = () => {
     const [todos,setTodos] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/get')
+        axios.get(`${API_URL}/get`)
         .then(response => {
             setTodos(response.data);
         }).catch(error => {
@@ -17,7 +18,7 @@ const Home = () => {
 
     const handleEdit = (id) => {
         console.log('Edit todo with id:', id);
-        axios.put('http://localhost:3000/update/' + id)
+        axios.put(`${API_URL}/update/` + id)
         .then(result => {
             location.reload()
             
@@ -27,7 +28,7 @@ const Home = () => {
     }
 
     const handleDelete = (id) => {
-        axios.delete('http://localhost:3000/delete/' + id)
+        axios.delete(`${API_URL}/delete/` + id)
         .then(result => {
             location.reload()
             
