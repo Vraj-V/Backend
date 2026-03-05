@@ -4,20 +4,70 @@ import axios from 'axios'
 
 function App() {
   const [user,setUser] = useState([])
-
+  const [name,setName] = useState("")
+  const [age,setAge] = useState("")
+  
+  
   useEffect(()=>{
-    axios.get("http://localhost:3000/getUsers/")
+      axios.get("http://localhost:3000/getUsers/")
+      .then((result)=>{
+        console.log(result);
+        setUser(result.data)
+      })
+      .catch((err)=>{
+        console.log(err); 
+      })
+  },[])
+
+
+  const handleSubmit = async (e)=>{
+  e.preventDefault();
+  // console.log(name," ", age)
+    await axios.post("http://localhost:3000/createUser", {name,age})
     .then((result)=>{
       console.log(result);
-      setUser(result.data)
+      console.log("data send!")
     })
-    .catch((err)=>{
-      console.log(err);
-    })
-  },[])
+    .catch((err)=> console.log(err.response.data.message  ));
+
+    setName("");
+    setAge("");
+  }
+
   return (
-    <div>
-      
+    <div className='main'>
+      <div className='flex'>
+
+      {user.map((users)=>{
+        return <div key={users._id}>
+          <h1>Your Name:  <span className='spanning'> {users.name} |</span>  Your Age:<span className='age'> {users.age} </span></h1>
+        </div>
+      })}
+      </div>
+
+      <form action="" method='post' onSubmit={handleSubmit}>
+        <label htmlFor="name">Name: </label>
+        <input type="text"
+        name='name'
+        id='name'
+        autoComplete='off'
+        value={name}
+        onChange={(e)=>{
+          setName(e.target.value);
+        }} />
+  <br />
+<label htmlFor="name">Age: </label>
+        <input type="text"
+        name='age'
+        id='age'
+        value={age}
+        autoComplete='off'
+        onChange={(e)=>{
+          setAge(e.target.value);
+        }} />
+  <br />
+    <button className='btn'>Submit</button>
+      </form>
     </div>
   )
 }

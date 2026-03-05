@@ -1,0 +1,28 @@
+.main{
+  margin: 50px auto;
+}
+
+.spanning{
+  color: red;
+}
+.age{
+  color:blue;
+}
+label{
+  font-size: 22px;
+  margin-right: 10px
+}
+input{
+  outline: none;
+  padding:5px;
+}
+
+.btn{
+  background-color: rgb(206, 212, 218);
+  padding: 8px 15px;
+  margin: 12px 0px 0px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: black  ;
+  font-size: 18px;
+}
