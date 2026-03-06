@@ -11,7 +11,6 @@ function App() {
   useEffect(()=>{
       axios.get("http://localhost:3000/getUsers/")
       .then((result)=>{
-        console.log(result);
         setUser(result.data)
       })
       .catch((err)=>{
@@ -23,13 +22,22 @@ function App() {
   const handleSubmit = async (e)=>{
   e.preventDefault();
   // console.log(name," ", age)
-    await axios.post("http://localhost:3000/createUser", {name,age})
-    .then((result)=>{
-      console.log(result);
-      console.log("data send!")
-    })
-    .catch((err)=> console.log(err.response.data.message  ));
+    if(name.trim() === "" || age.trim() === ""){
+      alert("Please fill the form!")
+      return;
+    }
+    // console.log(name," ", age)
 
+    try{
+      const sendData =await axios.post("http://localhost:3000/createUser", {name,age})
+      console.log(sendData.data);
+      console.log("data send successfully");
+
+    }
+    catch(err){
+      console.log(err);
+      alert(err.response.data.message)
+    }
     setName("");
     setAge("");
   }
