@@ -21,6 +21,16 @@ const User = () => {
         fetchUser();
     },[])
 
+    const handleDelete = async (id) => {
+        try{
+            await axios.delete(`http://localhost:5000/delete/${id}`);
+            console.log("user deleted");
+            fetchUser();
+        }catch(err){
+            console.log(err);
+            }
+    }
+
 
   return (
     <div className='d-flex vh-100 bg-secondary justify-content-center align-items-center'>
@@ -44,7 +54,9 @@ const User = () => {
                             <td>
             <Link to="/updateUser" className='btn btn-warning '>Edit 🔧</Link>
                                 <span>  </span>
-                                <button className='btn btn-danger'>Delete</button></td>
+                                <button className='btn btn-danger' onClick={()=>{
+                                    handleDelete(user._id)
+                                }}>Delete</button></td>
                         </tr>
                     })}
                 </tbody>
