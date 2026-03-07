@@ -1,12 +1,28 @@
 import { useState } from 'react'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Routes,Route} from 'react-router-dom'
+import User from './User'
+import CreateUser from './CreateUser'
+import UpdateUser from './UpdateUser'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>hello</h1>
+     <div>
+      
+      
+      <Routes>
+        <Route path='/' element= {<User />}></Route>
+        <Route path='/createUser' element= {<CreateUser />}></Route>
+        <Route path='/updateUser' element= {<UpdateUser />}></Route>
+
+      </Routes>
+      
+      
+      </div> 
 
     </>
   )

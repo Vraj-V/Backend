@@ -10,7 +10,7 @@ app.use(express.json());
 mongoose.connect("mongodb://localhost:27017/crud")
 
 
-app.get("/", async (req,res)=>{
+app.get("/user", async (req,res)=>{
     try{
         const result = await userModel.find({})
     res.status(200).json(result)
@@ -20,6 +20,13 @@ app.get("/", async (req,res)=>{
         console.log(err)
     }
 })
+
+
+app.post("/create", async (req,res)=>{
+    
+})
+
+
 const PORT = 5000;
 
 app.listen(PORT, () => {
