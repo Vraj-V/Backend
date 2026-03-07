@@ -23,9 +23,26 @@ app.get("/user", async (req,res)=>{
 
 
 app.post("/create", async (req,res)=>{
-    
+    const user= req.body;
+    try{
+        const result = await  userModel.create(user);
+        const savedUser = await result.save();
+        res.status(200).json(savedUser);
+    }catch(err){
+        res.status(400).json(err)
+    }
 })
 
+app.delete('/delete/:id', async(req,res)=>{
+    const id = req.params.id;
+    try{
+        const result = await userModel.findByIdAndDelete(id)
+        res.status(200).json(result);
+    }catch(err){
+        res.status(400).json({message: err.message})
+    }
+
+})
 
 const PORT = 5000;
 
