@@ -17,9 +17,6 @@ const User = () => {
         }
     }
 
-    useEffect(  ()=>{
-        fetchUser();
-    },[])
 
     const handleDelete = async (id) => {
         try{
@@ -31,10 +28,27 @@ const User = () => {
             }
     }
 
+    const handleUpdate =async (id,users)=>{
+        try{
+            axios.put(`http://localhost:5000/update/${id}`,{
+                name: users.name,
+                age: users.age,
+                email: users.email
+            });
+            console.log("User updated!");
+            fetchUser();
+        }catch(err){
+            console.log(err);
+        }
+    }
 
+
+    useEffect(  ()=>{
+        fetchUser();
+    },[])
   return (
     <div className='d-flex vh-100 bg-secondary justify-content-center align-items-center'>
-        <div className='w-50 bg-white rounded p-3'>
+        <div className='w-auto bg-white rounded p-3'>
             <Link to="/createUser" className='btn btn-success'   >Add +</Link>
             <table className='table'>
                 <thead>
@@ -46,16 +60,18 @@ const User = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {user.map((user)=>{
-                        return <tr key={user._id}>
-                            <td >{user.name}</td>
-                            <td>{user.email}</td>
-                            <td>{user.age}</td>
+                    {user.map((u)=>{
+                        return <tr key={u._id}>
+                            <td >{u.name}</td>
+                            <td>{u.email}</td>
+                            <td>{u.age}</td>
                             <td>
-            <Link to="/updateUser" className='btn btn-warning '>Edit 🔧</Link>
+            <button  className='btn btn-warning '  onClick={()=>{
+                handleUpdate(u._id,u);
+            }}>Edit 🔧</button>
                                 <span>  </span>
                                 <button className='btn btn-danger' onClick={()=>{
-                                    handleDelete(user._id)
+                    handleDelete(u._id)
                                 }}>Delete</button></td>
                         </tr>
                     })}

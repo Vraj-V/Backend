@@ -9,6 +9,9 @@ app.use(express.json());
 
 mongoose.connect("mongodb://localhost:27017/crud")
 
+app.get("/", (req,res)=>{
+    res.send("server running");
+})
 
 app.get("/user", async (req,res)=>{
     try{
@@ -40,6 +43,20 @@ app.delete('/delete/:id', async(req,res)=>{
         res.status(200).json(result);
     }catch(err){
         res.status(400).json({message: err.message})
+    }
+
+})
+
+app.put('/update/:id', async(req,res)=>{
+    const id = req.params.id;
+    const user = req.body; //give the username
+
+    try{
+        
+    const result = await userModel.findByIdAndUpdate(id,user,{ new: true});
+    res.status(200).json(result);
+    }catch(err){
+        res.status(400).json({message: err})
     }
 
 })
