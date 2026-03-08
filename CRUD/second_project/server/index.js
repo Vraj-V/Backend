@@ -49,7 +49,7 @@ app.delete('/delete/:id', async(req,res)=>{
 
 app.put('/update/:id', async(req,res)=>{
     const id = req.params.id;
-    const user = req.body; //give the username
+    const user = req.body; //taking the client username
 
     try{
         
