@@ -8,6 +8,7 @@
             age:0
         })
         const navigate = useNavigate();
+        
         const handleChange = (e)=>{
             const {name,value} = e.target;
             setUser({...user,[name]:value})

@@ -28,19 +28,7 @@ const User = () => {
             }
     }
 
-    const handleUpdate =async (id,users)=>{
-        try{
-            axios.put(`http://localhost:5000/update/${id}`,{
-                name: users.name,
-                age: users.age,
-                email: users.email
-            });
-            console.log("User updated!");
-            fetchUser();
-        }catch(err){
-            console.log(err);
-        }
-    }
+
 
 
     useEffect(  ()=>{
@@ -66,9 +54,7 @@ const User = () => {
                             <td>{u.email}</td>
                             <td>{u.age}</td>
                             <td>
-            <button  className='btn btn-warning '  onClick={()=>{
-                handleUpdate(u._id,u);
-            }}>Edit 🔧</button>
+            <button  className='btn btn-warning '><Link to={`/updateUser/${u._id}`}>Update</Link></button>
                                 <span>  </span>
                                 <button className='btn btn-danger' onClick={()=>{
                     handleDelete(u._id)
