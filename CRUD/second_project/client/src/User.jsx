@@ -54,7 +54,7 @@ const User = () => {
                             <td>{u.email}</td>
                             <td>{u.age}</td>
                             <td>
-            <button  className='btn btn-warning '><Link to={`/updateUser/${u._id}`}>Update</Link></button>
+            <Link to={`/updateUser/${u._id}`}   className='btn btn-warning '>Update</Link>
                                 <span>  </span>
                                 <button className='btn btn-danger' onClick={()=>{
                     handleDelete(u._id)
