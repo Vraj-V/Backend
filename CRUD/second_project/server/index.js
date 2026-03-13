@@ -55,6 +55,7 @@ app.delete('/delete/:id', async(req,res)=>{
         try{
             const result = await userModel.findById(
                 id
+                
             );
             res.status(200).json(result);
         }catch(err){
