@@ -22,6 +22,11 @@
 
 li = [1,2.234,23234,234123,324]
 li.remove(1)
-li.sort( reverse=True)
+# li.sort( reverse=True)
 li.sort()
+
+li.append(123)
+# li.clear()
+li.extend([1,2,3])
+print(li.index(1))
 print(li)
