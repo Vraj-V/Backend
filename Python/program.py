@@ -24,6 +24,8 @@ print("Done!")
 
 # Random number
 
+
+'''
 import random as rd
 
 secert = rd.randint(1,10)
@@ -39,3 +41,32 @@ while True:
     else:
             print(f"Congrats found the number {attemps} attempts!")
             break
+'''
+
+
+# Todo list
+
+todoList =[]
+
+while True:
+        print("select of your choice:: 1 Create a task, 2nd View the task, 3rd Delete task , 4 Quit ")
+        choice = int(input("Enter the number: "))
+
+        if choice ==1:
+            task = input("Task: ")
+            todoList.append(task)
+            print(todoList)
+            
+        elif choice == 2:
+            print(todoList)
+        elif choice == 3:
+            deleteTsk = int(input("Give task number to delete: "))
+            for i in todoList:
+                tskdelete = deleteTsk + 1
+                todoList.pop(tskdelete)
+                print(f"Removed : ", tskdelete)
+        elif choice == 4:
+            print( "Task ended!!")
+            break
+        else:
+            print("Please enter the valid output from options!")
