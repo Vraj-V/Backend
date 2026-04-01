@@ -1,7 +1,7 @@
     import React, { useState } from "react";
     import 'bootstrap/dist/css/bootstrap.min.css';
     import { useNavigate } from 'react-router-dom';
-
+    import axios from 'axios';
 
     const Registration = () => {
     const [name,setName] = useState("");
@@ -10,14 +10,13 @@
         const [password,setPassword] = useState("");
         const navigate = useNavigate()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if(email === '' && password ==="" ){
         alert("Something went wrong")
         return ;
         }
-        
         // Sign Up logic
         if (password !== confirmPassword) {
             alert("Passwords do not match!");
@@ -25,9 +24,11 @@
         }
         // Perform sign-up API call here
         console.log("Signing up with:", { name, email, password });
-
-        localStorage.setItem("user", JSON.stringify({name, email}));
+        await  axios.post("http://localhost:3000/register", {name,email,password})
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
     }
+
 
     
     return (

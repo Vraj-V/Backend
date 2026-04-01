@@ -1,5 +1,8 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const Login = () => {
         const [email,setEmail] = useState("");
         const [password,setPassword] = useState("");
@@ -12,6 +15,10 @@ const Login = () => {
         alert("Something went wrong")
         return ;
         }
+
+        axios.post('http://localhost:3000/login',{email,password})
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
         
           // Sign Up logic
     }
